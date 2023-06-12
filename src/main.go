@@ -37,30 +37,6 @@ func main() {
 	fmt.Println(res)
 }
 
-func ConvertToLCDBeta(params ConversionLCDParams) (string, error) {
-	strNums := strconv.Itoa(params.Num)
-	var strBuilder strings.Builder
-
-	for row := 0; row < rows; row++ {
-		for _, strNum := range strNums {
-			representations, ok := representationsLCD[strNum]
-			if !ok {
-				return "", fmt.Errorf("unknown number: %c", strNum)
-			}
-
-			for i := 0; i < params.Height; i++ {
-				for _, line := range representations[row] {
-					strBuffer := strings.Repeat(line, params.Width)
-					strBuilder.WriteString(strBuffer)
-				}
-				strBuilder.WriteString("\n")
-			}
-		}
-	}
-
-	return strBuilder.String(), nil
-}
-
 func ConvertToLCD(params ConversionLCDParams) (string, error) {
 	strNums := strconv.Itoa(params.Num)
 
