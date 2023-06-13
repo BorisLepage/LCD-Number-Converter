@@ -15,6 +15,12 @@ import (
 
 const rows = 3
 
+var (
+	ErrorInvalidNumber = errors.New("expected integer between 1 and 9999 ")
+	ErrorInvalidWidth  = errors.New("width expected integer between 1 and 10 ")
+	ErrorInvalidHeight = errors.New("height expected integer between 1 and 10 ")
+)
+
 type ConversionLCDParams struct {
 	Num    int
 	Width  int
@@ -121,10 +127,7 @@ func ReadArgsFromTerminal(params *ConversionLCDParams) error {
 	}
 	if params.Num < 1 || 9999 < params.Num {
 		return fmt.Errorf(
-			"scanning params num : err : %w : num : %d",
-			errors.New("expected integer between 1 and 9999 "),
-			params.Num,
-		)
+			"scanning params num : err : %w : num : %d", ErrorInvalidNumber, params.Num)
 	}
 
 	fmt.Print("Enter the width (1-10) : ")
@@ -134,10 +137,7 @@ func ReadArgsFromTerminal(params *ConversionLCDParams) error {
 	}
 	if params.Width < 1 || 10 < params.Width {
 		return fmt.Errorf(
-			"scanning params width : err : %w : num : %d",
-			errors.New("expected integer between 1 and 10 "),
-			params.Width,
-		)
+			"scanning params width : err : %w : num : %d", ErrorInvalidWidth, params.Width)
 	}
 
 	fmt.Print("Enter the height (1-10) : ")
@@ -147,10 +147,7 @@ func ReadArgsFromTerminal(params *ConversionLCDParams) error {
 	}
 	if params.Height < 1 || 10 < params.Height {
 		return fmt.Errorf(
-			"scanning params height : err : %w : num : %d",
-			errors.New("expected integer between 1 and 10 "),
-			params.Height,
-		)
+			"scanning params height : err : %w : num : %d", ErrorInvalidHeight, params.Height)
 	}
 
 	return nil
