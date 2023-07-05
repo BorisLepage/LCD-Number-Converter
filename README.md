@@ -1,5 +1,7 @@
 # LCD Number Converter
 
+[![Go](https://github.com/BorisLepage/LCD-Number-Converter/actions/workflows/go.yml/badge.svg)](https://github.com/BorisLepage/LCD-Number-Converter/actions/workflows/go.yml)
+
 This is a command-line program that converts a given number into an LCD-style representation.
 The program takes input for the number, width, and height from the user and generates the corresponding LCD-style representation.
 
