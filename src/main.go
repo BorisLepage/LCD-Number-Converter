@@ -63,7 +63,7 @@ func ConvertToLCD(params ConversionLCDParams) (string, error) {
 			for i, line := range representations[row] {
 				switch {
 				case line == " ":
-					if !contains(representations[row], "_") && i == 0 {
+					if !contains(representations[row], "_") && i == 1 {
 						for w := 0; w < params.Width; w++ {
 							strBuffer += line
 							addLineBuffer += " "
@@ -86,8 +86,8 @@ func ConvertToLCD(params ConversionLCDParams) (string, error) {
 				}
 			}
 		}
-		strBuffer += "\n"
-		addLineBuffer += "\n"
+		// strBuffer += "\n"
+		// addLineBuffer += "\n"
 
 		if strings.Contains(addLineBuffer, "|") {
 			for i := 0; i < addLine; i++ {
