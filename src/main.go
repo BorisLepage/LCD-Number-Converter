@@ -12,6 +12,7 @@ import (
 //  ||_  _|  | _||_|  ||_| _|
 
 // (each digit is 3 rows high by default)
+// modif to test
 
 const rows = 3
 
