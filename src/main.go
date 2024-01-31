@@ -86,8 +86,8 @@ func ConvertToLCD(params ConversionLCDParams) (string, error) {
 				}
 			}
 		}
-		// strBuffer += "\n"
-		// addLineBuffer += "\n"
+		strBuffer += "\n"
+		addLineBuffer += "\n"
 
 		if strings.Contains(addLineBuffer, "|") {
 			for i := 0; i < addLine; i++ {
